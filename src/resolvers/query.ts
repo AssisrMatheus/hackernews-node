@@ -1,5 +1,26 @@
 import { ContextType } from '../index';
 
-export const feed = (_root, _args, context: ContextType) => {
-  return context.prisma.links();
+export const feed = async (_root, args, context: ContextType) => {
+  const where = args.filter
+    ? {
+        OR: [{ description_contains: args.filter }, { url_contains: args.filter }]
+      }
+    : {};
+
+  const links = await context.prisma.links({
+    where,
+    skip: args.skip,
+    first: args.first,
+    orderBy: args.orderBy
+  });
+  const count = await context.prisma
+    .linksConnection({
+      where
+    })
+    .aggregate()
+    .count();
+  return {
+    links,
+    count
+  };
 };
