@@ -1,0 +1,36 @@
+{
+  "name": "hackernews-node-typescript",
+  "version": "1.0.0",
+  "description": "Small project made to learn graphql from https://www.howtographql.com/graphql-js/1-getting-started/",
+  "main": "index.ts",
+  "scripts": {
+    "start": "ts-node-dev --inspect --respawn --project tsconfig.json src/index.ts",
+    "build": "tsc --build",
+    "preserve": "npm run build",
+    "serve": "node dist/src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AssisrMatheus/hackernews-node-typescript.git"
+  },
+  "author": "Matheus Assis Rios",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AssisrMatheus/hackernews-node-typescript/issues"
+  },
+  "homepage": "https://github.com/AssisrMatheus/hackernews-node-typescript#readme",
+  "dependencies": {
+    "typescript": "^3.7.5"
+  },
+  "devDependencies": {
+    "@types/node": "^13.7.1",
+    "@typescript-eslint/eslint-plugin": "^2.19.2",
+    "@typescript-eslint/parser": "^2.19.2",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-jsdoc": "^21.0.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "prettier": "^1.19.1",
+    "ts-node-dev": "^1.0.0-pre.44"
+  }
+}
