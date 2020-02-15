@@ -3,8 +3,10 @@ import { prisma } from './generated/prisma-client';
 import { ContextParameters } from 'graphql-yoga/dist/types';
 import * as Query from './resolvers/query';
 import * as Mutation from './resolvers/mutation';
+import * as Subscription from './resolvers/subscription';
 import * as Link from './resolvers/link';
 import * as User from './resolvers/user';
+import * as Vote from './resolvers/vote';
 
 export type ContextType = {
   prisma: typeof prisma;
@@ -13,8 +15,10 @@ export type ContextType = {
 const resolvers = {
   Query,
   Mutation,
+  Subscription,
   Link,
-  User
+  User,
+  Vote
 };
 
 const server = new GraphQLServer({

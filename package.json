@@ -8,9 +8,10 @@
     "build": "tsc --build",
     "preserve": "npm run build",
     "serve": "node dist/src/index.js",
-    "prisma:deploy": "prisma deploy",
     "prisma:gen": "prisma generate",
-    "prisma:reset": "prisma reset"
+    "prisma:reset": "prisma reset",
+    "preprisma:deploy": "npm run prisma:reset",
+    "prisma:deploy": "prisma deploy"
   },
   "repository": {
     "type": "git",

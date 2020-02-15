@@ -57,3 +57,21 @@ export const updateLink = (_root, args, context: ContextType) => {
 export const deleteLink = (_root, args, context: ContextType) => {
   return context.prisma.deleteLink({ ...args });
 };
+
+export const vote = async (_parent, args, context: ContextType) => {
+  const userId = getUserId(context);
+
+  const linkExists = await context.prisma.$exists.vote({
+    user: { id: userId },
+    link: { id: args.linkId }
+  });
+
+  if (linkExists) {
+    throw new Error(`Already voted for link: ${args.linkId}`);
+  }
+
+  return context.prisma.createVote({
+    user: { connect: { id: userId } },
+    link: { connect: { id: args.linkId } }
+  });
+};
