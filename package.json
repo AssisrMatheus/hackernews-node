@@ -7,7 +7,9 @@
     "start": "ts-node-dev --inspect --respawn --project tsconfig.json src/index.ts",
     "build": "tsc --build",
     "preserve": "npm run build",
-    "serve": "node dist/src/index.js"
+    "serve": "node dist/src/index.js",
+    "prisma:deploy": "prisma deploy",
+    "prisma:gen": "prisma generate"
   },
   "repository": {
     "type": "git",
@@ -21,6 +23,7 @@
   "homepage": "https://github.com/AssisrMatheus/hackernews-node-typescript#readme",
   "dependencies": {
     "graphql-yoga": "^1.18.3",
+    "prisma": "^1.34.10",
     "typescript": "^3.7.5"
   },
   "devDependencies": {

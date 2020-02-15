@@ -1,0 +1,11 @@
+# The HTTP endpoint for your Prisma API
+#endpoint: ''
+endpoint: https://us1.prisma.sh/matheus-assis-16818d/hackernews-node-typescript/dev
+
+# Points to the file that contains your datamodel
+datamodel: datamodel.prisma
+
+# Specifies language & location for the generated Prisma client
+generate:
+  - generator: typescript-client
+    output: ../src/generated/prisma-client
