@@ -9,7 +9,8 @@
     "preserve": "npm run build",
     "serve": "node dist/src/index.js",
     "prisma:deploy": "prisma deploy",
-    "prisma:gen": "prisma generate"
+    "prisma:gen": "prisma generate",
+    "prisma:reset": "prisma reset"
   },
   "repository": {
     "type": "git",
@@ -22,7 +23,9 @@
   },
   "homepage": "https://github.com/AssisrMatheus/hackernews-node-typescript#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "graphql-yoga": "^1.18.3",
+    "jsonwebtoken": "^8.5.1",
     "prisma": "^1.34.10",
     "prisma-client-lib": "^1.34.10",
     "typescript": "^3.7.5"
